@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
@@ -10,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import RocCurveDisplay , PrecisionRecallDisplay
 from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix
 from sklearn.metrics import precision_score, recall_score
+import matplotlib.pyplot as plt
 def main():
     st.title("Binary Classification Web App")
     st.sidebar.title("Binary Classification Web App")
