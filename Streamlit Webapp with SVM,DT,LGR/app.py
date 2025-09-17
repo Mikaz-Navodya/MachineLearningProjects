@@ -95,7 +95,7 @@ def main():
             y_predict= model.predict(x_test)
             st.write('Accuracy = ', round(accuracy,2))
             st.write('Precision Score',round(precision_score(y_test,y_pred=y_predict,labels=classNames),2))
-            st.write('Recall Score =',recall_score(y_test,y_predict,labels=classNames).round(2))
+            st.write('Recall Score =',round(recall_score(y_test,y_predict,labels=classNames),2))
             plot_metrics(metrics)
 
     if classifier == 'Logistic Regression':
@@ -112,7 +112,7 @@ def main():
             y_pred=model.predict(x_test)
             st.write('Accuracy =',round(accuracy,2))
             st.write('Precision Score =', round(precision_score(y_test,y_pred=y_pred,labels=classNames),2))
-            st.write('Recall Score =',recall_score(y_test,y_pred,labels=classNames).round(2))
+            st.write('Recall Score =',round(recall_score(y_test,y_pred,labels=classNames),2))
             plot_metrics(metrics)
 
     if classifier == 'Random Forest':
