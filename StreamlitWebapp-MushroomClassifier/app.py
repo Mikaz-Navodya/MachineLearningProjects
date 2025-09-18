@@ -10,18 +10,15 @@ from sklearn.metrics import RocCurveDisplay , PrecisionRecallDisplay
 from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix
 from sklearn.metrics import precision_score, recall_score
 import matplotlib.pyplot as plt
-from pathlib import Path
 def main():
     st.title("Binary Classification Web App")
     st.sidebar.title("Binary Classification Web App")
     st.markdown("Are your mushrooms edible or poisonous?")
     st.sidebar.markdown("Are your mushrooms edible or poisonous?")
-   
-    
+
     @st.cache_data(persist=True)
     def LoadDataSet():
-        csv_path = Path.cwd() / "StreamlitWebapp-MushroomClassifier/mushrooms.csv"
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv('mushrooms.csv')
         LE = LabelEncoder()
         for col in df.columns:
             df[col]=LE.fit_transform(df[col])
