@@ -24,7 +24,7 @@ def main():
     st.write("Folders in CWD:", folders)
     @st.cache_data(persist=True)
     def LoadDataSet():
-        csv_path = Path.cwd() / "mushroom.csv"
+        csv_path = Path.cwd() / "mushrooms.csv"
         df = pd.read_csv(csv_path)
         LE = LabelEncoder()
         for col in df.columns:
