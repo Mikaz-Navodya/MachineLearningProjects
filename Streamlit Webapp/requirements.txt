@@ -1,3 +1,6 @@
+streamlit==0.87.0
+./rasalib-0.1.0-py3-none-any.whl
+
 streamlit
 matplotlib
 scikit-learn
