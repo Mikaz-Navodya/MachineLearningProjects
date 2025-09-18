@@ -10,6 +10,7 @@ from sklearn.metrics import RocCurveDisplay , PrecisionRecallDisplay
 from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix
 from sklearn.metrics import precision_score, recall_score
 import matplotlib.pyplot as plt
+from pathlib import Path
 def main():
     st.title("Binary Classification Web App")
     st.sidebar.title("Binary Classification Web App")
@@ -18,7 +19,12 @@ def main():
 
     @st.cache_data(persist=True)
     def LoadDataSet():
-        df = pd.read_csv('mushrooms.csv')
+        # Get the current directory where your app.py is located
+        current_dir = Path(__file__).parent  
+
+        # Build the path to mushroom.csv
+        csv_path = current_dir / "mushroom.csv"
+        df = pd.read_csv(csv_path)
         LE = LabelEncoder()
         for col in df.columns:
             df[col]=LE.fit_transform(df[col])
