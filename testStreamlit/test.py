@@ -19,11 +19,7 @@ def main():
 
     @st.cache_data(persist=True)
     def LoadDataSet():
-        # Get the current directory where your app.py is located
-        current_dir = Path(__file__).parent  
-
-        # Build the path to mushroom.csv
-        csv_path = current_dir / "mushroom.csv"
+        csv_path = Path.cwd() / "mushroom.csv"
         df = pd.read_csv(csv_path)
         LE = LabelEncoder()
         for col in df.columns:
