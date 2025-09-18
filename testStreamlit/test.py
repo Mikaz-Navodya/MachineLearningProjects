@@ -11,12 +11,14 @@ from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix
 from sklearn.metrics import precision_score, recall_score
 import matplotlib.pyplot as plt
 from pathlib import Path
+import os
 def main():
     st.title("Binary Classification Web App")
     st.sidebar.title("Binary Classification Web App")
     st.markdown("Are your mushrooms edible or poisonous?")
     st.sidebar.markdown("Are your mushrooms edible or poisonous?")
-
+   
+    st.markdown("CWD:", os.getcwd())
     @st.cache_data(persist=True)
     def LoadDataSet():
         csv_path = Path.cwd() / "mushroom.csv"
