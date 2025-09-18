@@ -19,6 +19,9 @@ def main():
     st.sidebar.markdown("Are your mushrooms edible or poisonous?")
    
     st.write("CWD:", os.getcwd())
+    st.write("----------------------------------------------")
+    folders = [f.name for f in Path.cwd().iterdir() if f.is_dir()]
+    st.write("Folders in CWD:", folders)
     @st.cache_data(persist=True)
     def LoadDataSet():
         csv_path = Path.cwd() / "mushroom.csv"
