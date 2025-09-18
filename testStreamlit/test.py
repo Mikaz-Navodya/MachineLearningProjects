@@ -18,7 +18,7 @@ def main():
     st.markdown("Are your mushrooms edible or poisonous?")
     st.sidebar.markdown("Are your mushrooms edible or poisonous?")
    
-    st.markdown("CWD:", os.getcwd())
+    st.write("CWD:", os.getcwd())
     @st.cache_data(persist=True)
     def LoadDataSet():
         csv_path = Path.cwd() / "mushroom.csv"
